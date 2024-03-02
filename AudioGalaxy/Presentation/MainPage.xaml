@@ -1,0 +1,38 @@
+﻿<Page x:Class="AudioGalaxy.Presentation.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:AudioGalaxy.Presentation"
+      xmlns:uen="using:Uno.Extensions.Navigation.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      xmlns:um="using:Uno.Material"
+      NavigationCacheMode="Required"
+      Background="{ThemeResource BackgroundBrush}">
+
+  <Grid utu:SafeArea.Insets="VisibleBounds">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <utu:NavigationBar Content="{Binding Title}" />
+
+    <StackPanel Grid.Row="1"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Spacing="16">
+
+      <TextBox x:Name="RecordingName"
+               PlaceholderText="Recording Name"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
+
+      <Button Content="Start Recording"
+              x:Name="RecordAudioButton"
+              Click="RecordAudioClicked" />
+
+      <TextBlock x:Name="RecordingStatus"
+                 Text="Status: "
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center" />
+    </StackPanel>
+  </Grid>
+</Page>
